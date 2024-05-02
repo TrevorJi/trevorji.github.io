@@ -1,14 +1,14 @@
 function reorder() {
-    var obj = $('.center p');
+    var obj = ('.center p');
     var count = obj.length;
     
     for(var i=1; i<=count; i++) {
-    itA = $('.center p:nth-child('+i+')');
+    itA = ('.center p:nth-child('+i+')');
     
     rnd = rmax(count);
     if(rnd==i) continue;
     
-    itB = $('.center p:nth-child('+rnd+')');
+    itB = ('.center p:nth-child('+rnd+')');
     
     var itAC = itA.clone(true);
     var itBC = itB.clone(true);
