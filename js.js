@@ -10,8 +10,8 @@ function reorder() {
     
     itB = ('.center p:nth-child('+rnd+')');
     
-    var itAC = itA.structuredClone(true);
-    var itBC = itB.structuredClone(true);
+    var itAC = structuredClone(itA);
+    var itBC = structuredClone(itB);
     
     itBC.insertAfter(itA);
     itA.remove();
