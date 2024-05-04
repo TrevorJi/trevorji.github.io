@@ -6,7 +6,6 @@ body {
 
 .center {
     text-align: center;
-    max-width: 40%; 
   }
 
 .logo {
@@ -21,7 +20,12 @@ body {
     margin-top: 36px;
   }
 
-
+.journal {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
 
   
 a:link {
