@@ -13,10 +13,10 @@ function reorder() {
     var itAC = structuredClone(itA);
     var itBC = structuredClone(itB);
     
-    itBC.insertAfter(itA);
+    insertAfter(itBC, itA);
     itA.remove();
     
-    itAC.insertAfter(itB);
+    insertAfter(itAC, itB);
     itB.remove();
     }
     }
@@ -24,6 +24,10 @@ function reorder() {
     function rmax(max){
     var n = Math.round(Math.random()*max);
     return n == 0 ? 1 : n;
+    }
+
+    function insertAfter(newNode, existingNode) {
+        existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
     }
 
 function isShe() {
