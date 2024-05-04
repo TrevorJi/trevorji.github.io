@@ -1,16 +1,16 @@
 function reorder() {
-    var obj = ('.center p');
+    var obj = document.querySelectorAll('.center p');
     var count = obj.length;
     var itA;
     var itB;
 
     for(var i=1; i<=count; i++) {
-    itA = ('.center p:nth-child('+i+')');
+    itA = document.querySelector('.center p:nth-child('+i+')');
     
     rnd = rmax(count);
     if(rnd==i) continue;
     
-    itB = ('.center p:nth-child('+rnd+')');
+    itB = document.querySelector('.center p:nth-child('+rnd+')');
     
     var itAC = structuredClone(itA);
     var itBC = structuredClone(itB);
