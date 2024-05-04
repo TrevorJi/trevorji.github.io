@@ -9,11 +9,18 @@
   <body>
     <img src="/resources/asterion.jpg" class="logo">
     <div id="q1" class="center">
-        <form class="form">
+        <form class="form" onsubmit="isShe()">
           <label for="firstquestion">What is your name?</label><br>
           <input type="text" id="firstquestion" name="firstquestion">
-          <input type="submit" value="Submit" onclick="isShe()">
+          <input type="submit" value="Submit">
         </form>
     </div>
+    <div id="q2" class="center">
+      <form class="form" onsubmit="isMe()">
+        <label for="secondquestion">Who built this maze for you?</label><br>
+        <input type="text" id="secondquestion" name="secondquestion">
+        <input type="submit" value="Submit">
+      </form>
+  </div>
   </body>
 </html>
