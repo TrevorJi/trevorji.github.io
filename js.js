@@ -1,7 +1,9 @@
 function reorder() {
     var obj = ('.center p');
     var count = obj.length;
-    
+    var itA;
+    var itB;
+
     for(var i=1; i<=count; i++) {
     itA = ('.center p:nth-child('+i+')');
     
