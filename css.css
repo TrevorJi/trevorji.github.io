@@ -51,6 +51,7 @@ body {
   margin-bottom: 72px;
   line-height: 2;
   width: 35%;
+  word-break: normal;
 }
 
   
