@@ -18,14 +18,40 @@ body {
 
 .form {
     margin-top: 36px;
+    font-weight: bold;
   }
 
 .journal {
     text-align: center;
+    color: gray;
+    margin-top: 36px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 72px;
+    line-height: 2;
     width: 35%;
   }
+
+.journal:hover {
+    text-align: center;
+    color: white;
+    margin-top: 36px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 72px;
+    line-height: 2;
+    width: 35%;
+}
+
+.journalDecoded {
+  text-align: center;
+  margin-top: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 72px;
+  line-height: 2;
+  width: 35%;
+}
 
   
 a:link {
