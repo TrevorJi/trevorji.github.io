@@ -18,12 +18,13 @@ function isShe(event) {
     }
 }
 
-function isMe() {
+function isMe(event) {
     var input = document.querySelector('#secondquestion');
     var answer = input.value.toLowerCase();
     if(answer === 'talanvantus'){
         window.location.replace("/welcome.html");
     } else {
         window.location.replace("/404.html");
+        event.preventDefault();
     }
 }

@@ -9,14 +9,14 @@
   <body>
     <img src="/resources/asterion.jpg" class="logo">
     <div id="q1" class="center">
-        <form class="form" method="POST" action="https://trevorji.github.io/index.html/" onsubmit="isShe(event)">
+        <form class="form" onsubmit="isShe(event)">
           <label for="firstquestion">What is your name?</label><br>
           <input type="text" id="firstquestion" name="firstquestion">
           <input type="submit" value="Submit">
         </form>
     </div>
     <div id="q2" class="center">
-      <form class="form" onsubmit="isMe()">
+      <form class="form" onsubmit="isMe(event)" style="display: none;">
         <label for="secondquestion">Who built this maze for you?</label><br>
         <input type="text" id="secondquestion" name="secondquestion">
         <input type="submit" value="Submit">
