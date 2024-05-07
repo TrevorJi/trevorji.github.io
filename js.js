@@ -11,10 +11,10 @@ function isShe(event) {
     if(answer === 'maimai'){
         document.getElementById('q1').style.display = "none";
         document.getElementById('q2').style.display = "grid";
-        event.preventDefault()
+        event.preventDefault();
     } else {
         window.location.replace("/404.html");
-        event.preventDefault()
+        event.preventDefault();
     }
 }
 
