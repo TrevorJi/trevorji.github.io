@@ -16,7 +16,7 @@ function encode(){
             a[i] = a[j];
             a[j] = tmp;
         }
-        return a.join("");
+        document.querySelector('.journal').innerText = a.join("");
 }
 
 
