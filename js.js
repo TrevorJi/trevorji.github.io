@@ -5,6 +5,21 @@ function shuffle(){
         }
 }
 
+function encode(){
+        var text = document.querySelector('.journal').innerText;
+        var a = text.split(""),
+            n = a.length;
+    
+        for(var i = n - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = a[i];
+            a[i] = a[j];
+            a[j] = tmp;
+        }
+        return a.join("");
+}
+
+
 function isShe(event) {
     var input = document.querySelector('#firstquestion');
     var answer = input.value.toLowerCase();
@@ -28,4 +43,24 @@ function isMe(event) {
         window.location.replace("/404.html");
         event.preventDefault();
     }
+}
+
+function whatIsHeCalled(event) {
+    var input = document.querySelector('#thirdquestion');
+    var answer = input.value.toLowerCase();
+    if(answer === 'minotaur'){
+        document.getElementById('q3').style.display = "none";
+        document.getElementById('q4').style.display = "grid";
+        event.preventDefault();
+    }
+}
+
+function whatIsHisRealName(event) {
+    var input = document.querySelector('#fourthquestion');
+    var answer = input.value.toLowerCase();
+    if(answer === 'asterion'){
+        window.location.replace("/journalOnAsterion.html");
+        event.preventDefault();
+    }
+
 }
