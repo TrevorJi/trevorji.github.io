@@ -23,6 +23,7 @@ function isMe(event) {
     var answer = input.value.toLowerCase();
     if(answer === 'talanvantus'){
         window.location.replace("/welcome.html");
+        event.preventDefault();
     } else {
         window.location.replace("/404.html");
         event.preventDefault();
