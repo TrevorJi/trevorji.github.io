@@ -64,3 +64,8 @@ function whatIsHisRealName(event) {
     }
 
 }
+
+function turnPages(){
+    var audio = new Audio('/resources/turning_pages.mp3');
+    audio.play();
+}
