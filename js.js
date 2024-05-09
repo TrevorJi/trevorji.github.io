@@ -16,7 +16,6 @@ function encode(){
             a[i] = a[j];
             a[j] = tmp;
         }
-        turnPages();
         document.querySelector('.journal').innerText = a.join("");
 }
 
@@ -47,6 +46,7 @@ function isMe(event) {
 }
 
 function whatIsHeCalled(event) {
+    turnPages();
     var input = document.querySelector('#thirdquestion');
     var answer = input.value.toLowerCase();
     if(answer === 'minotaur'){
@@ -57,6 +57,7 @@ function whatIsHeCalled(event) {
 }
 
 function whatIsHisRealName(event) {
+    turnPages();
     var input = document.querySelector('#fourthquestion');
     var answer = input.value.toLowerCase();
     if(answer === 'asterion'){
