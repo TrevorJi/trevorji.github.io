@@ -8,6 +8,11 @@ body {
     text-align: center;
   }
 
+.center p {
+    text-align: center;
+    max-width: 85%;
+  }
+
 .logo {
     display: block;
     margin-top: 36px;
@@ -83,12 +88,6 @@ a:hover {
 
 @media screen and (max-width:768px) {
   
-  .center {
-    text-align: center;
-    line-height: 2;
-    max-width: 90%;
-  }
-
   .journal {
     text-align: center;
     color: gray;
