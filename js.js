@@ -76,9 +76,9 @@ function whatIsHisRealName(event) {
 
 function turnPages(path){
     var audio = new Audio('/resources/turning_pages.mp3');
-    audio.onloadeddata = function(){
+    audio.addEventListener("canplaythrough", function(){
         var duration = audio.duration;
         audio.play();
         setTimeout(location.replace(path), duration*1000 + 300);
-    };
+    });
 }
