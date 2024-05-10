@@ -76,6 +76,7 @@ function whatIsHisRealName(event) {
 
 function turnPages(path){
     var audio = new Audio('/resources/turning_pages.mp3');
+    var duration = audio.duration;
     audio.play();
-    setTimeout(location.replace(path), audio.duration*1000);
+    setTimeout(location.replace(path), duration*1000);
 }
