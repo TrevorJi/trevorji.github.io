@@ -79,6 +79,6 @@ function turnPages(path){
     audio.addEventListener("canplaythrough", function(){
         var duration = audio.duration;
         audio.play();
-        setTimeout(location.replace(path), duration*1000 + 300);
+        setTimeout(function(){location.replace(path);}, duration*1000 + 300);
     });
 }
