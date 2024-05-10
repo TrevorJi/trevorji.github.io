@@ -46,28 +46,36 @@ function isMe(event) {
 }
 
 function whatIsHeCalled(event) {
-    turnPages();
     var input = document.querySelector('#thirdquestion');
     var answer = input.value.toLowerCase();
     if(answer === 'minotaur'){
+        event.preventDefault();
         document.getElementById('q3').style.display = "none";
         document.getElementById('q4').style.display = "grid";
+    } else {
         event.preventDefault();
+        var path = "/journal@y4191pi1klx0jjgn2a9nipjs2s916yldbrlr9qdy4q...-w1-s1-v10.html";
+        turnPages(path);
     }
 }
 
 function whatIsHisRealName(event) {
-    turnPages();
     var input = document.querySelector('#fourthquestion');
     var answer = input.value.toLowerCase();
     if(answer === 'asterion'){
-        window.location.replace("/journalOnAsterion.html");
         event.preventDefault();
+        var path = "/journalOnAsterion.html";
+        turnPages(path);
+    } else {
+        event.preventDefault();
+        var path = "/journal@y4191pi1klx0jjgn2a9nipjs2s916yldbrlr9qdy4q...-w1-s1-v10.html";
+        turnPages(path);
     }
 
 }
 
-function turnPages(){
+function turnPages(path){
     var audio = new Audio('/resources/turning_pages.mp3');
     audio.play();
+    setTimeout(location.replace(path), audio.duration*1000);
 }
