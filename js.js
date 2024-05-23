@@ -1,10 +1,10 @@
 function shuffle(){
-    var liblist = document.querySelectorAll('#liblist');
+    var liblist = document.querySelector('#libList');
     for (var i = liblist.children.length; i >= 0; i--) {
         liblist.appendChild(liblist.children[Math.random() * i | 0]);
         }
 
-    var jourlist = document.querySelectorAll('#jourlist');
+    var jourlist = document.querySelector('#jourList');
     for (var i = jourlist.children.length; i >= 0; i--) {
         jourlist.appendChild(jourlist.children[Math.random() * i | 0]);
         }
