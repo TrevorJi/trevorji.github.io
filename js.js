@@ -1,7 +1,12 @@
 function shuffle(){
-    var list = document.querySelector('div.center');
-    for (var i = list.children.length; i >= 0; i--) {
-        list.appendChild(list.children[Math.random() * i | 0]);
+    var liblist = document.querySelectorAll('#liblist');
+    for (var i = liblist.children.length; i >= 0; i--) {
+        liblist.appendChild(liblist.children[Math.random() * i | 0]);
+        }
+
+    var jourlist = document.querySelectorAll('#jourlist');
+    for (var i = jourlist.children.length; i >= 0; i--) {
+        jourlist.appendChild(jourlist.children[Math.random() * i | 0]);
         }
 }
 
