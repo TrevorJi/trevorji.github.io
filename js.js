@@ -74,6 +74,21 @@ function whatIsHisRealName(event) {
 
 }
 
+function whatIsHisName(event) {
+    var input = document.querySelector('#lastquestion');
+    var answer = input.value.toLowerCase();
+    if(answer === 'talanvantus'){
+        event.preventDefault();
+        var path = "/findthelastjournal.html";
+        turnPages(path);
+    } else {
+        event.preventDefault();
+        var path = "/journal@2uiujmssc603m7gfxnx0p1xpiffle2grvskbi1f...-w2-s3-v27.html";
+        turnPages(path);
+    }
+
+}
+
 function turnPages(path){
     var audio = new Audio('/resources/turning_pages.mp3');
     audio.addEventListener("canplaythrough", function(){
