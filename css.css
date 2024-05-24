@@ -70,6 +70,12 @@ body {
   word-break: keep-all;
 }
 
+p.hex {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+  line-break: anywhere;  
+}
   
 a:link {
     color: white;
