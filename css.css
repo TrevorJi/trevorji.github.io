@@ -72,6 +72,11 @@ body {
 
 p.hex {
   color: white;
+  line-break: anywhere;  
+}
+
+p.hex:hover {
+  color: white;
   font-weight: bold;
   text-decoration: underline;
   line-break: anywhere;  
