@@ -24,6 +24,12 @@ function encode(){
         document.querySelector('.journal').innerText = a.join("");
 }
 
+function hexCopy(){
+        var hexP = docuemnt.querySelector('[pid=hex]');
+        navigator.clipboard.writeText(hexP.textContent);
+        alert("Hex Coordinate Copied");
+}
+
 
 function isShe(event) {
     var input = document.querySelector('#firstquestion');
