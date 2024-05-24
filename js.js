@@ -25,7 +25,7 @@ function encode(){
 }
 
 function hexCopy(){
-        var hexP = docuemnt.querySelector('[pid=hex]');
+        var hexP = document.querySelector('[pid=hex]');
         navigator.clipboard.writeText(hexP.textContent);
         alert("Hex Coordinate Copied");
 }
