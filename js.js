@@ -30,6 +30,28 @@ function hexCopy(){
         alert("Hex Coordinate Copied");
 }
 
+function hide(){
+        var div = document.querySelector('#hint');
+        div.style.opacity = 0;
+}
+
+function showTheseus() {
+        var div = document.querySelector('#hint');
+        div.innerHTML = '<p>Theseus is <span style="color:white; font-weight:bold;">winning</span>.</p>';
+        div.style.opacity = 1;
+}
+
+function showAsterion() {
+        var div = document.querySelector('#hint');
+        div.innerHTML = '<p>Asterion is <span style="color:white; font-weight:bold;">losing</span>.</p>';
+        div.style.opacity = 1;
+}
+
+function showAriadne() {
+        var div = document.querySelector('#hint');
+        div.innerHTML = '<p>Ariadne is <span style="color:red; font-weight:bold;">smiling</span>.</p>';
+        div.style.opacity = 1;
+}
 
 function isShe(event) {
     var input = document.querySelector('#firstquestion');
