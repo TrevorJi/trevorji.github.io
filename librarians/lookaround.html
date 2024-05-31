@@ -9,16 +9,18 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   </head>
   <body>
-    <img src="/resources/mazeofbabel.png" class="logoMaze">
+    <a href="/thelibrarians.html"><img src="/resources/mazeofbabel.png" class="logoMaze"></a>
     <div style="text-align: center;">
       <p style="margin-bottom: 24px;">Look around</p>
-      <div style="width:653px; height:469px; margin-left:auto; margin-right:auto; position:relative;">
-        <img src="/resources/them.jpg" style="filter:brightness(25%); overflow: auto;">
-        <img class="overlay" src="/resources/theseus.png" style="left:220px; top:9px;" onmouseover="showTheseus()" onmouseout="hide()">
-        <img class="overlay" src="/resources/asterionlosing.png" style="left:353px; top:9px" onmouseover="showAsterion()" onmouseout="hide()">
-        <img class="overlay" src="" style="" onmouseover="showAriadne()" onmouseout="hide()">
+      <div class="horizon" style="text-align:center; overflow:auto;">
+        <div style="text-align:center; width:653px; height:475px; margin-left:auto; margin-right:auto; position:relative;">
+          <img src="/resources/them.jpg" style="filter:brightness(25%);">
+          <img class="overlay" src="/resources/theseus.png" style="left:220px; top:9px;" onmouseover="showTheseus()" onmouseout="hide()">
+          <img class="overlay" src="/resources/asterionlosing.png" style="left:353px; top:9px;" onmouseover="showAsterion()" onmouseout="hide()">
+          <img class="overlay" src="/resources/ariadne.png" style="left:33px; top:118px;" onmouseover="showAriadne()" onmouseout="hide()">
+        </div>
       </div>
-      <div id="hint" style="margin-top: 24px; opacity:0; transition:.5s ease;"></div>
+      <div id="hint" style="margin-top:24px; margin-bottom:24px; opacity:0; transition:.5s ease;"></div>
     </div>
   </body>
 </html>

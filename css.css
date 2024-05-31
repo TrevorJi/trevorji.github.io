@@ -110,7 +110,7 @@ a:hover {
 
 @media screen and (max-width:768px) {
   
-  .journal {
+.journal {
     text-align: center;
     color: gray;
     margin-top: 36px;
@@ -141,6 +141,10 @@ a:hover {
   line-height: 2;
   width: 85%;
   word-break: keep-all;
+}
+
+.horizon {
+  width: 100%
 }
 
 }
