@@ -146,6 +146,73 @@ function whatIsHisRealName(event) {
 
 }
 
+function whoIsWinning(event) {
+    var answer = document.querySelector('input[name="pictureOptions"]:checked').value;
+    if(answer === 'theseus'){
+        event.preventDefault();
+        document.getElementById('q5').style.display = "none";
+        document.getElementById('q6').style.display = "block";
+    } else {
+        event.preventDefault();
+        var path = "/journals/journal@t4mtn4uyuhe88aek8sdoo1s2rap0t58h3ceilo3.html";
+        turnPages(path);
+    }
+}
+
+function whoIsLosing(event) {
+    var answer = document.querySelector('input[name="pictureOptions"]:checked').value;
+    if(answer === 'asterion'){
+        event.preventDefault();
+        document.getElementById('q6').style.display = "none";
+        document.getElementById('q7').style.display = "block";
+    } else {
+        event.preventDefault();
+        var path = "/journals/journal@t4mtn4uyuhe88aek8sdoo1s2rap0t58h3ceilo3.html";
+        turnPages(path);
+    }
+}
+
+function whoIsSmiling(event) {
+    var answer = document.querySelector('input[name="pictureOptions"]:checked').value;
+    if(answer === 'ariadne'){
+        event.preventDefault();
+        localStorage.setItem("thehero", "met");
+        var path = "/journals/journalOnTheseus.html";
+        turnPages(path);
+    } else {
+        event.preventDefault();
+        var path = "/journals/journal@t4mtn4uyuhe88aek8sdoo1s2rap0t58h3ceilo3.html";
+        turnPages(path);
+    }
+}
+
+function whatIsTrue(event) {
+    var answer = document.querySelectorAll('input[name="selectOptions"]:checked').length;
+    if(answer === 0){
+        event.preventDefault();
+        document.getElementById('q8').style.display = "none";
+        document.getElementById('q9').style.display = "block";
+    } else {
+        event.preventDefault();
+        var path = "/journals/journal@3e59r4wdkas1evh2v5gvk4hgt0l8ljnkxrq7c4l...-w3-s2-v23.html";
+        turnPages(path);
+    }
+}
+
+function whatIsPermitted(event) {
+    var answer = document.querySelectorAll('input[name="selectOptions"]:checked').length;
+    if(answer === 3){
+        event.preventDefault();
+        localStorage.setItem("theassassin", "met");
+        var path = "/journals/journalOnAltair.html";
+        turnPages(path);
+    } else {
+        event.preventDefault();
+        var path = "/journals/journal@3e59r4wdkas1evh2v5gvk4hgt0l8ljnkxrq7c4l...-w3-s2-v23.html";
+        turnPages(path);
+    }
+}
+
 /* Adapted Carousel JS by Jonathan Ching 
 from https://codepen.io/chingy/pen/yLLZRbj*/
 
@@ -167,12 +234,21 @@ function loadCarousel() {
         blind = localStorage.getItem("theblind"),
         rabbit = localStorage.getItem("therabbit");
 
+    
+
     var width, height, totalWidth, margin = 20
     
     function init() {
         resize();
         move(Math.floor(items.length / 2));
         bindEvents();
+
+        if(monster === "met") links[2].href = "/journals/journalOnAsterion.html";
+        if(hero === "met") links[2].href = "/journals/journalOnTheseus.html";
+        if(assassin === "met") links[2].href = "/journals/journalOnAltair.html";
+        if(clown === "met") links[2].href = "/journals/journalOnTimMinchin.html";
+        if(blind === "met") links[2].href = "/journals/journalOnBorges.html";
+        if(rabbit === "met") links[2].href = "/journals/journalOnVelveteenRabbit.html";
     }
     
     function resize() {
@@ -205,9 +281,6 @@ function loadCarousel() {
                 box.style.transform = "perspective(1200px) rotateY(" + (i < (index - 1) ? 40 : -40) + "deg)";
             }
         }
-      
-        //switch문으로 index에 따라 title의 textContent값 Journal@...으로 바꿔주기 + localStorage 값에 따라 Journal On Asterion과 같이 제목 드러내기
-
 
         slider.style.transform = "translate3d(" + ((index * -width) + (width / 2) + window.innerWidth / 2) + "px, 0, 0)";
     }
