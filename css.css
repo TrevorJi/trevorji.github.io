@@ -1,11 +1,19 @@
+@font-face {
+  font-family: typeWriter;
+  src: url(/resources/1942.ttf);
+}
+
 body {
     background-color:#151C24;
-    font-family: "Roboto", sans-serif;
+    font-family: typeWriter;
     color: white
   }
 
 .center {
     text-align: center;
+    font-size: larger;
+    line-height: 1.5;
+    margin-top: 28px;
   }
 
 .center p {
@@ -46,8 +54,9 @@ body {
   
 
 .form {
-    margin-top: 36px;
+    margin-top: 8px;
     line-height: 2.5;
+    font-size: larger;
     font-weight: bold;
   }
 
@@ -143,7 +152,7 @@ a:hover {
   border-radius: 20px;
   margin: auto;
   padding: 10px 20px 100px 20px;
-  width: 50%; /* 모바일에선 80%로 맞출 것 */
+  width: 50%;
   text-align: center;
 }
 
@@ -279,4 +288,13 @@ a:hover {
   width: 100%
 }
 
+/* Modal Content */
+.modal-content {
+  background-color:black;
+  border-radius: 20px;
+  margin: auto;
+  padding: 10px 20px 100px 20px;
+  width: 85%;
+  text-align: center;
+}
 }

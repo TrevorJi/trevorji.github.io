@@ -88,9 +88,37 @@ window.onclick = function(event) {
   }
 }
 
+// Drag & Drop 함수들
+function drag(event){
+    event.dataTransfer.setData("Text", event.target.id);
+}
+
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function drop(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("Text");
+    var dragged = document.getElementById(data);
+    if(event.target.id.includes("letter")){
+        var tmp = document.createElement('span');
+        event.target.before(tmp);
+        dragged.before(event.target);
+        tmp.replaceWith(dragged);
+    }else if(event.target.id.includes("socket") && event.target.childElementCount > 0){
+        var tmp = document.createElement('span');
+        var target = event.target.children[0];
+        target.before(tmp);
+        dragged.before(target);
+        tmp.replaceWith(dragged);
+    }else{
+        event.target.appendChild(dragged);
+    }
+    
+}
 
 //Theseus 힌트 함수들
-
 function hide(){
     var div = document.querySelector('#hint');
     div.style.opacity = 0;
@@ -115,7 +143,6 @@ function showAriadne() {
 }
 
 //Journals 퀴즈 함수들 - 정답 입력 시 localStorage 값 변경
-
 function whatIsHeCalled(event) {
     var input = document.querySelector('#thirdquestion');
     var answer = input.value.toLowerCase();
@@ -213,6 +240,89 @@ function whatIsPermitted(event) {
     }
 }
 
+function whatIsTheWord(event) {
+    var answer = document.querySelector('#socket1').textContent
+               + document.querySelector('#socket2').textContent
+               + document.querySelector('#socket3').textContent
+               + document.querySelector('#socket4').textContent
+               + document.querySelector('#socket5').textContent
+               + document.querySelector('#socket6').textContent;
+    if(answer === 'ginger'){
+        event.preventDefault();
+        localStorage.setItem("theclown", "met");
+        var path = "/journals/journalOnTimMinchin.html";
+        turnPages(path);
+    }else{
+        event.preventDefault();
+        var path = "/journals/journal@01cadlqkz82jhlm3j1ikc1cnscd25voi56a5n5n...-w2-s1-v32.html";
+        turnPages(path);
+    }
+}
+
+function showLevel2(event) {
+    event.preventDefault();
+    document.getElementById('mapLv1').style.display = "none";
+    document.getElementById('mapLv2').style.display = "block";
+}
+
+function showLevel3(event) {
+    event.preventDefault();
+    document.getElementById('mapLv2').style.display = "none";
+    document.getElementById('mapLv3').style.display = "block";
+}
+
+function showBorges(event) {
+    event.preventDefault();
+    localStorage.setItem("theblind", "met");
+    var path = "/journals/journalOnBorges.html";
+    turnPages(path);
+}
+
+function makeReal(event) {
+    var input = document.querySelector('#makeMeReal');
+    var answer = input.value;
+    if(answer.includes('REAL') && answer.includes('love') && answer.includes('you')){
+        event.preventDefault();
+        document.getElementById('q12').style.display = "none";
+        document.getElementById('q13').style.display = "block";
+    } else {
+        event.preventDefault();
+        var path = "/journals/journal@22fnjdz8zw3sb9gp5u965duuasm41xulqovj6wu...-w1-s2-v31.html";
+        turnPages(path);
+    }
+}
+
+function thisHappens(event) {
+    var input = document.querySelector('#whatHappened');
+    var answer = input.value;
+    if(answer.includes('Real')){
+        event.preventDefault();
+        document.getElementById('q13').style.display = "none";
+        document.getElementById('q14').style.display = "block";
+    } else {
+        event.preventDefault();
+        var path = "/journals/journal@22fnjdz8zw3sb9gp5u965duuasm41xulqovj6wu...-w1-s2-v31.html";
+        turnPages(path);
+    }
+}
+
+function thisMeans(event) {
+    var input = document.querySelector('#whatMeaning');
+    var answer = input.value;
+    if(answer.includes('hurt')){
+        event.preventDefault();
+        localStorage.setItem("therabbit", "met");
+        document.getElementById('q14').style.display = "none";
+        document.getElementById('c15').style.display = "block";
+        var path = "/journals/journalOnVelveteenRabbit.html";
+        turnPages(path);
+    } else {
+        event.preventDefault();
+        var path = "/journals/journal@22fnjdz8zw3sb9gp5u965duuasm41xulqovj6wu...-w1-s2-v31.html";
+        turnPages(path);
+    }
+}
+
 /* Adapted Carousel JS by Jonathan Ching 
 from https://codepen.io/chingy/pen/yLLZRbj*/
 
@@ -243,12 +353,12 @@ function loadCarousel() {
         move(Math.floor(items.length / 2));
         bindEvents();
 
+        if(clown === "met") links[0].href = "/journals/journalOnTimMinchin.html";
+        if(hero === "met") links[1].href = "/journals/journalOnTheseus.html";
         if(monster === "met") links[2].href = "/journals/journalOnAsterion.html";
-        if(hero === "met") links[2].href = "/journals/journalOnTheseus.html";
-        if(assassin === "met") links[2].href = "/journals/journalOnAltair.html";
-        if(clown === "met") links[2].href = "/journals/journalOnTimMinchin.html";
-        if(blind === "met") links[2].href = "/journals/journalOnBorges.html";
-        if(rabbit === "met") links[2].href = "/journals/journalOnVelveteenRabbit.html";
+        if(assassin === "met") links[3].href = "/journals/journalOnAltair.html";
+        if(blind === "met") links[4].href = "/journals/journalOnBorges.html";
+        if(rabbit === "met") links[5].href = "/journals/journalOnVelveteenRabbit.html";
     }
     
     function resize() {
