@@ -77,8 +77,13 @@ function isMe(event) {
 
 // Modal 함수들
 function openModal() {
+  var isMobile = /Mobi/i.test(window.navigator.userAgent);
   var modal = document.getElementsByClassName("modal")[0];
-  modal.style.display = "block";
+  if(isMobile){
+    alert("Try on a Desktop or a Laptop");
+  } else {
+    modal.style.display = "block";
+  }
 }
 
 window.onclick = function(event) {
@@ -375,10 +380,10 @@ function loadCarousel() {
                                                                              
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
             if ( xDiff > 0 ) {
-                index = index - 1;
+                index = index + 1;
                 move(index);
             } else {
-                index = index + 1;
+                index = index - 1;
                 move(index);
             }                       
         } 
