@@ -345,30 +345,30 @@ function loadCarousel() {
 
     var width, height, totalWidth, margin = 20;
     
-    document.addEventListener('touchstart', handleTouchStart, false);        
-    document.addEventListener('touchmove', handleTouchMove, false);
+    document.addEventListener('touchstart', handleTouchStart);        
+    document.addEventListener('touchmove', handleTouchMove);
     
     var xDown = null;                                                        
     var yDown = null;
     var index = Math.floor(items.length / 2);
     
-    function getTouches(evt) {
-      return evt.touches;
+    function getTouches(event) {
+      return event.touches;
     }                                                     
                                                                              
-    function handleTouchStart(evt) {
-        const firstTouch = getTouches(evt)[0];                                      
+    function handleTouchStart(event) {
+        const firstTouch = getTouches(event)[0];                                      
         xDown = firstTouch.clientX;                                      
         yDown = firstTouch.clientY;                                      
     };                                                
                                                                              
-    function handleTouchMove(evt) {
+    function handleTouchMove(event) {
         if ( ! xDown || ! yDown ) {
             return;
         }
     
-        var xUp = evt.touches[0].clientX;                                    
-        var yUp = evt.touches[0].clientY;
+        var xUp = event.touches[0].clientX;                                    
+        var yUp = event.touches[0].clientY;
     
         var xDiff = xDown - xUp;
         var yDiff = yDown - yUp;
@@ -377,9 +377,11 @@ function loadCarousel() {
             if ( xDiff > 0 ) {
                 index = index - 1;
                 moveToIndex(index);
+                alert("horizontally swiped");
             } else {
                 index = index + 1;
                 moveToIndex(index);
+                alert("horizontally swiped");
             }                       
         } 
         xDown = null;
