@@ -345,8 +345,8 @@ function loadCarousel() {
 
     var width, height, totalWidth, margin = 20;
     
-    carousel.addEventListener('touchstart', handleTouchStart, false);        
-    carousel.addEventListener('touchmove', handleTouchMove, false);
+    document.addEventListener('touchstart', handleTouchStart, false);        
+    document.addEventListener('touchmove', handleTouchMove, false);
     
     var xDown = null;                                                        
     var yDown = null;
@@ -375,10 +375,10 @@ function loadCarousel() {
                                                                              
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
             if ( xDiff > 0 ) {
-                index = index + 1;
+                index = index - 1;
                 moveToIndex(index);
             } else {
-                index = index - 1;
+                index = index + 1;
                 moveToIndex(index);
             }                       
         } 
