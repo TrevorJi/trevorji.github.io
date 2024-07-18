@@ -1,3 +1,10 @@
+var monster = localStorage.getItem("themonster"),
+    hero = localStorage.getItem("thehero"),
+    assassin = localStorage.getItem("theassassin"),
+    clown = localStorage.getItem("theclown"),
+    blind = localStorage.getItem("theblind"),
+    rabbit = localStorage.getItem("therabbit");
+
 function shuffle(){
     var liblist = document.querySelector('#libList');
     for (var i = liblist.children.length; i >= 0; i--) {
@@ -340,13 +347,6 @@ function loadCarousel() {
         links = document.querySelectorAll('.carousel a'),
         cards = document.querySelectorAll('.carousel__slider__item > .item__3d-frame');
         cards.forEach(function(element){element.addEventListener("click", moveToIndex)});
-
-    var monster = localStorage.getItem("themonster"),
-        hero = localStorage.getItem("thehero"),
-        assassin = localStorage.getItem("theassassin"),
-        clown = localStorage.getItem("theclown"),
-        blind = localStorage.getItem("theblind"),
-        rabbit = localStorage.getItem("therabbit");
 
     var width, height, totalWidth, margin = 20;
     
