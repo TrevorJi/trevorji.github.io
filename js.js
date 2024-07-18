@@ -380,10 +380,22 @@ function loadCarousel() {
                                                                              
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
             if ( xDiff > 0 ) {
+                if(index < 1) {
+                    index = items.length;
+                } else if(index > items.length) {
+                    index = 1;
+                } else {
                 index = index + 1;
+                }
                 move(index);
             } else {
+                if(index < 1) {
+                    index = items.length;
+                } else if(index > items.length) {
+                    index = 1;
+                } else {
                 index = index - 1;
+                }
                 move(index);
             }                       
         } 
