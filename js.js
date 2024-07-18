@@ -376,12 +376,10 @@ function loadCarousel() {
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
             if ( xDiff > 0 ) {
                 index = index - 1;
-                moveToIndex(index);
-                alert("horizontally swiped");
+                move(index);
             } else {
                 index = index + 1;
-                moveToIndex(index);
-                alert("horizontally swiped");
+                move(index);
             }                       
         } 
         xDown = null;
